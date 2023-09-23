@@ -24,7 +24,7 @@ import view.Menu;
 public class Program extends Menu<String> {
 
     static String[] opsList = {"Experience", "Fresher", "Internsip", "Search", "Exit"};
-    protected ArrayList<Candidate> candidateList;
+    ArrayList<Candidate> candidateList;
     Validation validation = new Validation();
     Scanner sc = new Scanner(System.in);
 
