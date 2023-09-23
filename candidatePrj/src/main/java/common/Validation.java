@@ -85,12 +85,12 @@ public class Validation {
     }
 
     public String getString(String mess) {
-        String result = "";
-        try {
-            System.out.println(mess + ": ");
+        String result;
+        System.out.println(mess + ": ");
+        result = sc.nextLine();
+        while(result.isEmpty()){
+            System.out.println("Enter again(Can not blank): ");
             result = sc.nextLine();
-        } catch (NumberFormatException e) {
-            System.out.println("Please, enter a string: ");
         }
         return result;
     }
