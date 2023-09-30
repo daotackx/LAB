@@ -4,17 +4,8 @@
  */
 package controller;
 
-import common.Validation;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.function.Predicate;
 import model.Candidate;
-import model.Experience;
-import model.Fresher;
-import model.Internship;
 import repository.CandidateRepository;
 import repository.ICandidateRepository;
 import view.Menu;
