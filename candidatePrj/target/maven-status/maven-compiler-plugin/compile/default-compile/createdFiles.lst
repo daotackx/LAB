@@ -1,8 +1,11 @@
 model\Experience.class
+dataAccess\CandidateDao.class
+Main.class
+repository\ICandidateRepository.class
 view\Menu.class
-controller\Program.class
-view\Main.class
+controller\CandidateController.class
 model\Candidate.class
 model\Internship.class
 model\Fresher.class
 common\Validation.class
+repository\CandidateRepository.class

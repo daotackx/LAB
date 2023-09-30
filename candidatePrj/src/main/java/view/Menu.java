@@ -4,6 +4,7 @@
  */
 package view;
 
+import common.Validation;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,42 +15,38 @@ import java.util.Scanner;
  */
 public abstract class Menu<T> {
     protected String title;
-     protected ArrayList<T> opsList;
+    protected ArrayList<T> mList;
+    Validation va  = new Validation();
 
-    public Menu() {
-    }
-
-    public Menu(String td, String[] mc) {
-        this.title = td;
-        this.opsList = new ArrayList<>();
-        for (String s : mc) {
-            opsList.add((T) s);
+    public Menu(String title, String[] ml) {
+        this.title = title;
+        mList = new ArrayList<>();
+        for (String o : ml) {
+            this.mList.add((T) o);
         }
     }
-    
-    public void display(){
+
+    public void display() {
+        System.out.println("---------------------");
         System.out.println(title);
-        System.out.println("---------------------------------");
-        for (int i = 0; i < opsList.size(); i++) {
-            System.out.println((i+1) + "." + opsList.get(i));
+        System.out.println("---------------------");
+        for (int i = 0; i < mList.size(); i++) {
+            System.out.println(i + 1 + ". " + mList.get(i));
         }
-        System.out.println("----------------------------------");
     }
-     
-    public int getSelected(){
+
+    public int getSelected() {
         display();
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter selection..");
-        return Integer.parseInt(sc.nextLine());
+        return va.getIntLimit("Enter selection..", 1, mList.size() + 1);
     }
-    
+
     public abstract void execute(int n);
-    
-    public void run(){
-        while(true){
+
+    public void run() {
+        while (true) {
             int n = getSelected();
             execute(n);
-            if(n> opsList.size()){
+            if (n > mList.size()) {
                 break;
             }
         }

@@ -14,8 +14,24 @@ import java.util.regex.Pattern;
 public class Validation {
 
     static Scanner sc = new Scanner(System.in);
+    
+    public int getIntLimit(String mess, int n, int m) {
+        int result;
+        System.out.println(mess + ": ");
+        while (true) {
+            try {
+                result = Integer.parseInt(sc.nextLine().trim());
+                if (result < n || result > m) {
+                    throw new NumberFormatException();
+                }
+                return result;
+            } catch (NumberFormatException e) {
+                System.out.println("Please, enter a number between " + n + " and " + m + "!");
+            }
+        }
+    }
 
-    public int checkBirthDate(String mess) {
+    public static int checkBirthDate(String mess) {
         int result = 0;
         String check;
         try {
@@ -33,7 +49,7 @@ public class Validation {
         return result;
     }
 
-    public String inputPhoneNumber(String mess) {
+    public static String inputPhoneNumber(String mess) {
         String result = "";
         char[] c;
         try {
@@ -51,7 +67,7 @@ public class Validation {
         return result;
     }
 
-    public String inputYN(String mess) {
+    public static String inputYN(String mess) {
         String result = "";
         try {
             while (true) {
@@ -67,7 +83,7 @@ public class Validation {
         return result;
     }
 
-    public int getInt(String mess) {
+    public static int getInt(String mess) {
         int result = -1;
         try {
             while (true) {
@@ -84,18 +100,18 @@ public class Validation {
         return result;
     }
 
-    public String getString(String mess) {
+    public static String getString(String mess) {
         String result;
         System.out.println(mess + ": ");
         result = sc.nextLine();
         while(result.isEmpty()){
-            System.out.println("Enter again(Can not blank): ");
+            System.out.println("Enter again(Can not blank)");
             result = sc.nextLine();
         }
         return result;
     }
 
-    public String inputEmail(String mess) {
+    public static String inputEmail(String mess) {
         String pattern = "^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$";
         String result = "";
         char[] c;
@@ -114,7 +130,7 @@ public class Validation {
         return result;
     }
 
-    public int checkExpYear(String mess) {
+    public static int checkExpYear(String mess) {
         int result = 0;
         try {
             while (true) {
@@ -130,9 +146,8 @@ public class Validation {
         return result;
     }
 
-    public String checkRankGraduation(String mess) {
+    public static String checkRankGraduation(String mess) {
         String result = "";
-        try {
             while (true) {
                 System.out.println(mess + ": ");
                 result = sc.nextLine();
@@ -140,9 +155,7 @@ public class Validation {
                     break;
                 }
             }
-        } catch (Exception e) {
-            System.out.println("Please, input a number with minimum 10 characters! ");
-        }
+        
         return result;
     }
 
