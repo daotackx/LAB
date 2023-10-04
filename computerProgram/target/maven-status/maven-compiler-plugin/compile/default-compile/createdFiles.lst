@@ -1,0 +1,12 @@
+model\Element.class
+Main.class
+model\BMI$BMIStatus.class
+model\BMI.class
+repository\CalculationRepository.class
+dataAccess\CalculationDao.class
+view\Menu.class
+model\Element$Operator.class
+dataAccess\CalculationDao$1.class
+repository\ICalculationRepository.class
+common\Validation.class
+controller\CalculationController.class
