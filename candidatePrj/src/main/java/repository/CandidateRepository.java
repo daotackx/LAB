@@ -31,8 +31,8 @@ public class CandidateRepository implements ICandidateRepository {
         for (int i = 0; i < candidateList.size(); i++) {
             if (candidate.getId() == candidateList.get(i).getId()) {
                 candidateList.set(i, candidate);
+                break;
             }
-
         }
     }
 

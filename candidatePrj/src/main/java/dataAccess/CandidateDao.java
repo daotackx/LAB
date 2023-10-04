@@ -42,7 +42,8 @@ public class CandidateDao {
             String address = Validation.getString("Input address");
             String phone = Validation.inputPhoneNumber("Input a phonenumber with minimum 10 characters");
             String email = Validation.inputEmail("Input a email with format <account name>@<domain");
-            Candidate candidate = new Candidate(id, firstName, lastName, birthDate, address, phone, email, type);
+            Candidate candidate = new Candidate(id, firstName, lastName, birthDate, address, phone, email, type){
+             };
             switch (type) {
                 case 0 ->
                     addExperience(candidateList, candidate);

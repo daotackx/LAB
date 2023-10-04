@@ -14,6 +14,7 @@ import java.util.Scanner;
  * @param <T>
  */
 public abstract class Menu<T> {
+    
     protected String title;
     protected ArrayList<T> mList;
     Validation va  = new Validation();

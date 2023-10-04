@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 public class Validation {
 
     static Scanner sc = new Scanner(System.in);
-    
+
     public int getIntLimit(String mess, int n, int m) {
         int result;
         System.out.println(mess + ": ");
@@ -32,39 +32,39 @@ public class Validation {
     }
 
     public static int checkBirthDate(String mess) {
-        int result = 0;
+        int result;
         String check;
-        try {
-            while (true) {
+        while (true) {
+            try {
                 System.out.println(mess + ": ");
                 result = Integer.parseInt(sc.nextLine());
                 check = result + "";
-                if (Pattern.matches("^(1900|19[1-9][0-9]|20[0-1][0-9]|202[0-3])$", check)) {
-                    break;
+                if (!Pattern.matches("^(1900|19[1-9][0-9]|20[0-1][0-9]|202[0-3])$", check)) {
+                    throw new NumberFormatException();
                 }
+                return result;
+            } catch (NumberFormatException e) {
+                System.out.println("Please, input a number with length is 4 character ! ");
             }
-        } catch (NumberFormatException e) {
-            System.out.println("Please, input a number with length is 4 character ! ");
         }
-        return result;
+
     }
 
     public static String inputPhoneNumber(String mess) {
         String result = "";
         char[] c;
-        try {
-            while (true) {
+        while (true) {
+            try {
                 System.out.println(mess + ": ");
                 result = sc.nextLine();
                 c = result.toCharArray();
-                if (c.length >= 10) {
-                    break;
+                if (c.length == 10) {
+                    return result;
                 }
+            } catch (Exception e) {
+                System.out.println("Please, input a number with minimum 10 characters! ");
             }
-        } catch (Exception e) {
-            System.out.println("Please, input a number with minimum 10 characters! ");
         }
-        return result;
     }
 
     public static String inputYN(String mess) {
@@ -104,7 +104,7 @@ public class Validation {
         String result;
         System.out.println(mess + ": ");
         result = sc.nextLine();
-        while(result.isEmpty()){
+        while (result.isEmpty()) {
             System.out.println("Enter again(Can not blank)");
             result = sc.nextLine();
         }
@@ -148,14 +148,14 @@ public class Validation {
 
     public static String checkRankGraduation(String mess) {
         String result = "";
-            while (true) {
-                System.out.println(mess + ": ");
-                result = sc.nextLine();
-                if ("Excellence".equalsIgnoreCase(result) || "Good".equalsIgnoreCase(result) || "Fair".equalsIgnoreCase(result) || "Poor".equalsIgnoreCase(result)) {
-                    break;
-                }
+        while (true) {
+            System.out.println(mess + ": ");
+            result = sc.nextLine();
+            if ("Excellence".equalsIgnoreCase(result) || "Good".equalsIgnoreCase(result) || "Fair".equalsIgnoreCase(result) || "Poor".equalsIgnoreCase(result)) {
+                break;
             }
-        
+        }
+
         return result;
     }
 

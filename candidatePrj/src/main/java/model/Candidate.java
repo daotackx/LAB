@@ -8,7 +8,7 @@ package model;
  *
  * @author THAO LINH
  */
-public class Candidate {
+public abstract class Candidate {
     private int id;
     private String firstName;
     private String lastName;
