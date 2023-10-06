@@ -15,7 +15,7 @@ import model.Candidate;
  */
 public class CandidateRepository implements ICandidateRepository {
 
-    private List<Candidate> candidateList;
+    private final List<Candidate> candidateList;
 
     public CandidateRepository() {
         this.candidateList = new ArrayList<>();

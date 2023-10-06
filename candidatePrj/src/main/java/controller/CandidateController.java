@@ -16,7 +16,7 @@ import view.Menu;
  */
 public class CandidateController extends Menu<String> {
     
-    private ICandidateRepository candidateRepository;
+    private final ICandidateRepository candidateRepository;
     static String[] op = {"Experience", "Fresher", "Internsip", "Search", "Exit"};
     ArrayList<Candidate> candidateList;
 

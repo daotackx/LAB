@@ -3,6 +3,7 @@ dataAccess\CandidateDao.class
 Main.class
 repository\ICandidateRepository.class
 view\Menu.class
+dataAccess\CandidateDao$1.class
 controller\CandidateController.class
 model\Candidate.class
 model\Internship.class

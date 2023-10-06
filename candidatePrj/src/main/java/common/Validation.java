@@ -15,7 +15,7 @@ public class Validation {
 
     static Scanner sc = new Scanner(System.in);
 
-    public int getIntLimit(String mess, int n, int m) {
+    public static int getIntLimit(String mess, int n, int m) {
         int result;
         System.out.println(mess + ": ");
         while (true) {
@@ -44,60 +44,52 @@ public class Validation {
                 }
                 return result;
             } catch (NumberFormatException e) {
-                System.out.println("Please, input a number with length is 4 character ! ");
+                System.out.println("Please, enter a number with length is 4 character ! ");
             }
         }
 
     }
 
     public static String inputPhoneNumber(String mess) {
-        String result = "";
+        String result;
         char[] c;
         while (true) {
-            try {
-                System.out.println(mess + ": ");
-                result = sc.nextLine();
-                c = result.toCharArray();
-                if (c.length == 10) {
-                    return result;
-                }
-            } catch (Exception e) {
-                System.out.println("Please, input a number with minimum 10 characters! ");
+            System.out.println(mess + ": ");
+            result = sc.nextLine();
+            c = result.toCharArray();
+            if (c.length == 10) {
+                return result;
             }
+            System.out.println("Please, enter a number with minimum 10 characters! ");
         }
     }
 
     public static String inputYN(String mess) {
-        String result = "";
-        try {
-            while (true) {
-                System.out.println(mess + ": ");
-                result = sc.nextLine();
-                if (result.equalsIgnoreCase("y") || result.equalsIgnoreCase("n")) {
-                    break;
-                }
+        String result;
+        while (true) {
+            System.out.println(mess + ": ");
+            result = sc.nextLine().trim();
+            if (result.equalsIgnoreCase("y") || result.equalsIgnoreCase("n")) {
+                return result;
             }
-        } catch (Exception e) {
-            System.out.println("Please, input a string ");
+            System.out.println("Please, enter again (Y/N) ");
         }
-        return result;
     }
 
     public static int getInt(String mess) {
-        int result = -1;
-        try {
-            while (true) {
-                System.out.println(mess + ": ");
-                String value = sc.nextLine();
-                result = Integer.parseInt(value);
-                if (result > 0) {
-                    break;
+        int result;
+        while (true) {
+            System.out.println(mess + ": ");
+            try {
+                result = Integer.parseInt(sc.nextLine());
+                if (result < 0) {
+                    throw new NumberFormatException();
                 }
+                return result;
+            } catch (NumberFormatException e) {
+                System.out.println("Please, enter a number(>0)");
             }
-        } catch (NumberFormatException e) {
-            System.out.println("Please, enter a number: ");
         }
-        return result;
     }
 
     public static String getString(String mess) {
@@ -113,37 +105,32 @@ public class Validation {
 
     public static String inputEmail(String mess) {
         String pattern = "^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$";
-        String result = "";
-        char[] c;
-        try {
-            while (true) {
-                System.out.println(mess + ": ");
-                result = sc.nextLine();
-                c = result.toCharArray();
-                if (Pattern.matches(pattern, result)) {
-                    break;
-                }
+        String result;
+        while (true) {
+            System.out.println(mess + ": ");
+            result = sc.nextLine();
+            if (Pattern.matches(pattern, result) && !result.isEmpty()) {
+                return result;
+            } else {
+                System.out.println("Please, enter email with format <account name>@<domain>. ! ");
             }
-        } catch (Exception e) {
-            System.out.println("Please, inơut email with format <account name>@<domain>. ! ");
         }
-        return result;
     }
 
     public static int checkExpYear(String mess) {
-        int result = 0;
-        try {
-            while (true) {
+        int result;
+        while (true) {
+            try {
                 System.out.println(mess + ": ");
                 result = Integer.parseInt(sc.nextLine());
-                if (result >= 0 && result <= 100) {
-                    break;
+                if (result < 0 || result > 100) {
+                    throw new NumberFormatException();
                 }
+                return result;
+            } catch (NumberFormatException e) {
+                System.out.println("Please, enter a number from 0 to 100! ");
             }
-        } catch (Exception e) {
-            System.out.println("Please, input a number from 0 to 100! ");
         }
-        return result;
     }
 
     public static String checkRankGraduation(String mess) {

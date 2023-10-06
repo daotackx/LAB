@@ -17,7 +17,6 @@ public abstract class Menu<T> {
     
     protected String title;
     protected ArrayList<T> mList;
-    Validation va  = new Validation();
 
     public Menu(String title, String[] ml) {
         this.title = title;
@@ -38,7 +37,7 @@ public abstract class Menu<T> {
 
     public int getSelected() {
         display();
-        return va.getIntLimit("Enter selection..", 1, mList.size() + 1);
+        return Validation.getIntLimit("Enter selection..", 1, mList.size() + 1);
     }
 
     public abstract void execute(int n);
