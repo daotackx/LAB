@@ -17,7 +17,7 @@ public class Validation {
 
     static Scanner sc = new Scanner(System.in);
 
-    public static int getIntLimit(String mess, int n, int m) {
+    public int getIntLimit(String mess, int n, int m) {
         int result;
         while (true) {
             System.out.println(mess + ": ");
@@ -33,7 +33,7 @@ public class Validation {
         }
     }
 
-    public static String getString(String mess) {
+    public String getString(String mess) {
         String result;
         while (true) {
             System.out.println(mess + ": ");
@@ -45,7 +45,7 @@ public class Validation {
         }
     }
 
-    public static String getCode(String mess) {
+    public String getCode(String mess) {
         String result;
         while (true) {
             System.out.println(mess + ": ");
@@ -57,7 +57,7 @@ public class Validation {
         }
     }
 
-    public static boolean checkCode(String code, HashMap<String, Doctor> dList) {
+    public boolean checkCode(String code, HashMap<String, Doctor> dList) {
         if(dList.isEmpty()){
             return true;
         }
@@ -70,7 +70,7 @@ public class Validation {
         return true;
     }
 
-    public static int getInt(String mess) {
+    public int getInt(String mess) {
         int result;
         while (true) {
             System.out.println(mess + ": ");
@@ -86,7 +86,7 @@ public class Validation {
         }
     }
 
-    public static boolean checkCodeExist(String code, HashMap<String, Doctor> dList) {
+    public boolean checkCodeExist(String code, HashMap<String, Doctor> dList) {
         Set<String> keyset = dList.keySet();
         for (String o : keyset) {
             if (code.equalsIgnoreCase(dList.get(o).getCode())) {

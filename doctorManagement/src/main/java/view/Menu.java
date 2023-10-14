@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public abstract class Menu<T> {
     protected String title;
     protected ArrayList<T> mList;
-
+    Validation va = new Validation();
     public Menu(String title, String[] ml) {
         this.title = title;
         mList = new ArrayList<>();
@@ -32,7 +32,7 @@ public abstract class Menu<T> {
 
     public int getSelected() {
         display();
-        return Validation.getIntLimit("Enter selection..", 1, mList.size() + 1);
+        return va.getIntLimit("Enter selection..", 1, mList.size() + 1);
     }
 
     public abstract void execute(int n) throws Exception;
