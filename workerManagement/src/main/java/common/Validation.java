@@ -17,7 +17,7 @@ public class Validation {
 
     static Scanner sc = new Scanner(System.in);
 
-    public static int getIntLimit(String mess, int n, int m) {
+    public int getIntLimit(String mess, int n, int m) {
         int result;
         while (true) {
             System.out.println(mess + ": ");
@@ -33,7 +33,7 @@ public class Validation {
         }
     }
 
-    public static String getInputId(String mess, ArrayList<Worker> wList) {
+    public String getInputId(String mess, ArrayList<Worker> wList) {
         String result;
         while (true) {
             result = getString(mess);
@@ -57,7 +57,7 @@ public class Validation {
         }
     }
 
-    public static String getString(String mess) {
+    public String getString(String mess) {
         String result;
         while (true) {
             System.out.println(mess + ": ");
@@ -69,7 +69,7 @@ public class Validation {
         }
     }
 
-    public static double getInputDouble(String mess) {
+    public double getInputDouble(String mess) {
         double result;
         while (true) {
             System.out.println(mess + ": ");
@@ -85,7 +85,7 @@ public class Validation {
         }
     }
 
-    public static boolean checkIdExist(ArrayList<Worker> wList, String code) {
+    public boolean checkIdExist(ArrayList<Worker> wList, String code) {
         if (wList.isEmpty()) {
             System.out.println("List is empty!");
             return false;
@@ -98,7 +98,7 @@ public class Validation {
         return false;
     }
 
-    public static String getStatus(int n) {
+    public String getStatus(int n) {
         String result = "";
         switch (n) {
             case 1:

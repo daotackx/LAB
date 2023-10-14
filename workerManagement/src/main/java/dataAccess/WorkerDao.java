@@ -33,14 +33,15 @@ public class WorkerDao {
 
     ArrayList<Worker> wList = new ArrayList<>();
     ArrayList<History> hList = new ArrayList<>();
+    Validation va = new Validation();
 
     public ArrayList<Worker> addWorker() {
         System.out.println("======== Worker Management =========");
-        String id = Validation.getInputId("Enter Code", wList);
-        String name = Validation.getString("Enter name");
-        int age = Validation.getIntLimit("Enter age", 18, 50);
-        double salary = Validation.getInputDouble("Enter salary");
-        String workLocation = Validation.getString("Enter work location");
+        String id = va.getInputId("Enter Code", wList);
+        String name = va.getString("Enter name");
+        int age = va.getIntLimit("Enter age", 18, 50);
+        double salary = va.getInputDouble("Enter salary");
+        String workLocation = va.getString("Enter work location");
         Worker worker = new Worker(id, name, age, salary, workLocation);
         wList.add(worker);
         return wList;
@@ -48,14 +49,14 @@ public class WorkerDao {
 
     public boolean changeSalary(ArrayList<History> hList, int n) {
         System.out.println("------- Up/Down Salary --------");
-        String id = Validation.getString("Enter code");
-        if (!Validation.checkIdExist(wList, id)) {
+        String id = va.getString("Enter code");
+        if (!va.checkIdExist(wList, id)) {
             return false;
         }
         Worker w = getWorkerByCode(wList, id);
         double newSalary;
-        String status = Validation.getStatus(n);
-        double amount = Validation.getInputDouble("Enter salary");
+        String status = va.getStatus(n);
+        double amount = va.getInputDouble("Enter salary");
         if (status.equalsIgnoreCase("Up")) {
             newSalary = w.getSalary() + amount;
             w.setSalary(newSalary);
