@@ -7,6 +7,8 @@ package dataAccess;
 import common.Validation;
 import java.util.HashMap;
 import java.util.Set;
+import model.Dictionary;
+import repository.DictonaryRepository;
 
 /**
  *
@@ -39,7 +41,7 @@ public class DictionaryDao {
            }
         }
         String viet = va.getInputString("Enter Vietnamese");
-        dhm.put(eng, viet);
+        dhm.put(viet, viet);
         return true;
     }
     
