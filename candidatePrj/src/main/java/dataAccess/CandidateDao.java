@@ -30,17 +30,18 @@ public class CandidateDao {
         return instance;
     }
     
+    Validation va = new Validation();
     
      
      public void addCandidate(ArrayList<Candidate> candidateList, int type) {
         while (true) {
-             int id = Validation .getInt("Enter id");
-            String firstName = Validation.getString("Enter first name");
-            String lastName = Validation.getString("Enter last name");
-            int birthDate = Validation.checkBirthDate("Enter birth date");
-            String address = Validation.getString("Enter address");
-            String phone = Validation.inputPhoneNumber("Enter a phone number");
-            String email = Validation.inputEmail("Enter a email");
+             int id = va .getInt("Enter id");
+            String firstName = va.getString("Enter first name");
+            String lastName = va.getString("Enter last name");
+            int birthDate = va.checkBirthDate("Enter birth date");
+            String address = va.getString("Enter address");
+            String phone = va.inputPhoneNumber("Enter a phone number");
+            String email = va.inputEmail("Enter a email");
             Candidate candidate = new Candidate(id, firstName, lastName, birthDate, address, phone, email, type){
              };
             switch (type) {
@@ -53,7 +54,7 @@ public class CandidateDao {
                 default ->
                     throw new AssertionError();
             }
-            String in = Validation.inputYN("Do you want to continue(Y/N): ");
+            String in = va.inputYN("Do you want to continue(Y/N): ");
             if (!in.equalsIgnoreCase("y")) {
                 break;
             }
@@ -62,24 +63,24 @@ public class CandidateDao {
     }
 
     public void addExperience(ArrayList<Candidate> candidateList, Candidate candidate) {
-        int expInYear = Validation.checkExpYear("Enter number of experience years");
-        String proSkill = Validation.getString("Enter pro skill");
+        int expInYear = va.checkExpYear("Enter number of experience years");
+        String proSkill = va.getString("Enter pro skill");
         Candidate experience = new Experience(candidate.getId(), candidate.getFirstName(), candidate.getLastName(), candidate.getBirthDate(), candidate.getAddress(), candidate.getPhone(), candidate.getEmail(), candidate.getTypeCandidate(), expInYear, proSkill);
         candidateList.add(experience);
     }
 
     public void addInternship(ArrayList<Candidate> candidateList, Candidate candidate) {
-        String major = Validation.getString("Enter major");
-        String semester = Validation.getString("Enter semester");
-        String universityName = Validation.getString("Enter name of university");
+        String major = va.getString("Enter major");
+        String semester = va.getString("Enter semester");
+        String universityName = va.getString("Enter name of university");
         Internship internship = new Internship(candidate.getId(), candidate.getFirstName(), candidate.getLastName(), candidate.getBirthDate(), candidate.getAddress(), candidate.getPhone(), candidate.getEmail(), candidate.getTypeCandidate(), major, semester, universityName);
         candidateList.add(internship);
     }
 
     public void addFresher(ArrayList<Candidate> candidateList, Candidate candidate) {
-        String graduationDate = Validation.getString("Enter date of graduation");
-        String graduationRank = Validation.checkRankGraduation("Enter rank of graduation");
-        String education = Validation.getString("Enter education");
+        String graduationDate = va.getString("Enter date of graduation");
+        String graduationRank = va.checkRankGraduation("Enter rank of graduation");
+        String education = va.getString("Enter education");
         Fresher fresher = new Fresher(candidate.getId(), candidate.getFirstName(), candidate.getLastName(), candidate.getBirthDate(), candidate.getAddress(), candidate.getPhone(), candidate.getEmail(), candidate.getTypeCandidate(), graduationDate, graduationRank, education);
         candidateList.add(fresher);
     }
@@ -113,8 +114,8 @@ public class CandidateDao {
     public void search(ArrayList<Candidate> candidateList) {
         printCandidate(candidateList);
         ArrayList<Candidate> findCandidates = new ArrayList<>();
-        String name = Validation.getString("Enter candidate name(First name or last name): ");
-        int typeCandidate = Validation.getIntLimit("Enter type of candidate",0,2);
+        String name = va.getString("Enter candidate name(First name or last name): ");
+        int typeCandidate = va.getIntLimit("Enter type of candidate",0,2);
         for (Candidate o : candidateList) {
             if ((o.getFirstName().contains(name) || o.getLastName().contains(name)) && typeCandidate == o.getTypeCandidate()) {
                 findCandidates.add(o);
