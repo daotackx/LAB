@@ -15,7 +15,7 @@ public class Validation {
 
     static Scanner sc = new Scanner(System.in);
 
-    public static int getIntLimit(String mess, int n, int m) {
+    public int getIntLimit(String mess, int n, int m) {
         int result;
         System.out.println(mess + ": ");
         while (true) {
@@ -31,7 +31,7 @@ public class Validation {
         }
     }
 
-    public static int checkBirthDate(String mess) {
+    public int checkBirthDate(String mess) {
         int result;
         String check;
         while (true) {
@@ -50,7 +50,7 @@ public class Validation {
 
     }
 
-    public static String inputPhoneNumber(String mess) {
+    public String inputPhoneNumber(String mess) {
         String result;
         char[] c;
         while (true) {
@@ -64,7 +64,7 @@ public class Validation {
         }
     }
 
-    public static String inputYN(String mess) {
+    public String inputYN(String mess) {
         String result;
         while (true) {
             System.out.println(mess + ": ");
@@ -76,7 +76,7 @@ public class Validation {
         }
     }
 
-    public static int getInt(String mess) {
+    public int getInt(String mess) {
         int result;
         while (true) {
             System.out.println(mess + ": ");
@@ -92,7 +92,7 @@ public class Validation {
         }
     }
 
-    public static String getString(String mess) {
+    public String getString(String mess) {
         String result;
         System.out.println(mess + ": ");
         result = sc.nextLine();
@@ -103,7 +103,7 @@ public class Validation {
         return result;
     }
 
-    public static String inputEmail(String mess) {
+    public String inputEmail(String mess) {
         String pattern = "^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$";
         String result;
         while (true) {
@@ -117,7 +117,7 @@ public class Validation {
         }
     }
 
-    public static int checkExpYear(String mess) {
+    public int checkExpYear(String mess) {
         int result;
         while (true) {
             try {
@@ -133,7 +133,7 @@ public class Validation {
         }
     }
 
-    public static String checkRankGraduation(String mess) {
+    public String checkRankGraduation(String mess) {
         String result = "";
         while (true) {
             System.out.println(mess + ": ");
