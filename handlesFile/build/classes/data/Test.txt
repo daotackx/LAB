@@ -1,0 +1,3 @@
+nghia;ha noi;1000
+thanh;ha noi;1200
+phuong;ha noi;1300
