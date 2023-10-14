@@ -1,0 +1,8 @@
+Main.class
+controller\DictionaryController.class
+dataAccess\DictionaryDao.class
+repository\IDictionaryRepository.class
+view\Menu.class
+model\Dictionary.class
+common\Validation.class
+repository\DictonaryRepository.class
