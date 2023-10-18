@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/LAB/AreaAndPer/src/common/Validation.java</file>
+            <file>file:/D:/LAB/AreaAndPer/src/Repository/IShapeRepository.java</file>
+            <file>file:/D:/LAB/AreaAndPer/src/Repository/ShapeRepository.java</file>
+            <file>file:/D:/LAB/AreaAndPer/src/model/Shape.java</file>
+            <file>file:/D:/LAB/AreaAndPer/src/model/Rectangle.java</file>
+            <file>file:/D:/LAB/AreaAndPer/src/Main.java</file>
+            <file>file:/D:/LAB/AreaAndPer/src/model/Circle.java</file>
+            <file>file:/D:/LAB/AreaAndPer/src/view/Menu.java</file>
+            <file>file:/D:/LAB/AreaAndPer/src/model/Triangle.java</file>
+            <file>file:/D:/LAB/AreaAndPer/src/controller/ShapeController.java</file>
+            <file>file:/D:/LAB/AreaAndPer/src/dataAccess/ShapeDao.java</file>
+        </group>
+    </open-files>
+</project-private>
