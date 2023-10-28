@@ -21,7 +21,7 @@ public class Validation {
             System.out.println(mess + ": ");
             try {
                 result = Integer.parseInt(sc.nextLine());
-                if (result < m && result > n) {
+                if (result < m || result > n) {
                     throw new NumberFormatException();
                 }
                 return result;
