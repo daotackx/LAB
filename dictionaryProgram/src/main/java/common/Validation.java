@@ -15,12 +15,17 @@ import java.util.Set;
 public class Validation {
     static Scanner sc = new Scanner(System.in);
     public int getIntLimit(String mess, int n, int m) {
+        if(n > m){
+            int temp = n;
+            n = m;
+            m = temp;
+        }
         int result;
         while (true) {
             System.out.println(mess + ": ");
             try {
                 result = Integer.parseInt(sc.nextLine());
-                if (result < n && result > m) {
+                if (result < n || result > m) {
                     throw new NumberFormatException();
                 }
                 return result;
