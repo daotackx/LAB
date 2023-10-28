@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/LAB/CollectingHouseholdWaste/src/repository/CollectingGarbageRepository.java</file>
+            <file>file:/D:/LAB/CollectingHouseholdWaste/src/dataAccess/CollectingGarbageDao.java</file>
+            <file>file:/D:/LAB/CollectingHouseholdWaste/src/model/GarbageStation.java</file>
+            <file>file:/D:/LAB/CollectingHouseholdWaste/src/controller/Manager.java</file>
+            <file>file:/D:/LAB/CollectingHouseholdWaste/src/repository/ICollectingGarbageRepository.java</file>
+            <file>file:/D:/LAB/CollectingHouseholdWaste/src/model/GarbageTruck.java</file>
+            <file>file:/D:/LAB/CollectingHouseholdWaste/src/Main.java</file>
+            <file>file:/D:/LAB/CollectingHouseholdWaste/src/common/Validation.java</file>
+            <file>file:/D:/LAB/CollectingHouseholdWaste/src/view/Menu.java</file>
+        </group>
+    </open-files>
+</project-private>
