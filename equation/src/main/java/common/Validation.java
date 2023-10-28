@@ -20,7 +20,7 @@ public class Validation {
         while (true) {
             try {
                 result = Integer.parseInt(sc.nextLine().trim());
-                if (result < n && result > m) {
+                if (result < n || result > m) {
                     throw new NumberFormatException();
                 }
                 return result;
